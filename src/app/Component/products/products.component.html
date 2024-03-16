@@ -1,0 +1,14 @@
+<div class="p-2 productscont">
+  @if(products.length==0){
+  <h3>No products matches you search critria</h3>
+  } @for(parentProduct of products;track parentProduct.id){
+  <app-single-product
+    [product]="parentProduct"
+    [isChair]="true"
+    (handleAddToCart)="addToCart($event)"
+    [searchValue]="parentProduct.name | highlightI"
+  >
+    ></app-single-product
+  >
+  }
+</div>

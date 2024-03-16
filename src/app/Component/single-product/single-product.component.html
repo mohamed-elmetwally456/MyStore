@@ -1,0 +1,46 @@
+<div
+  class="card relative"
+  appHightlight
+  [quantity]="product.quantity || 0"
+  [quantity]="product.id"
+  (click)="handelroute(product.id)"
+>
+  <img
+    class="card-img-top"
+    [src]="product.imgURL"
+    alt="Card image cap"
+    height="250px"
+  />
+  @if(!product.quantity){
+  <div class="overlay"></div>
+  }
+  <div class="card-body">
+    <h5
+      class="card-title"
+      [innerHTML]="product.name | capitlize | highlightI"
+    ></h5>
+    <p class="card-text">{{ product.price | currency }}</p>
+    <p>{{ currentDate | date : "shortDate" }}</p>
+    @switch (product.quantity) { @case (1) {
+    <p class="text-warning">Only 1 left in stock - order soon.</p>
+    } @case (2) {
+    <p class="text-info">Only 2 left in stock - order soon.</p>
+    }@default {
+    <p>{{ product.quantity }} items available</p>
+    } }
+    <button
+      href="#"
+      class="btn btn-primary"
+      (click)="addProductToCart($event, product)"
+      [disabled]="product.quantity == 0"
+      style="margin-top: 40px"
+    >
+      Add to cart
+    </button>
+    @if (product.quantity==0) {
+    <p class="text-danger">Out of stock</p>
+    }@else {
+    <p class="text-success">in stock</p>
+    }
+  </div>
+</div>

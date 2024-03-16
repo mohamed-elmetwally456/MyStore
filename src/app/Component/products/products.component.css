@@ -1,0 +1,19 @@
+.productscont{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(360px,1fr));
+  gap: 10px;
+}
+.outstock{
+position: absolute;
+width: 80%;
+height: 80%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgba(203, 203, 203, 0.354);
+}
+.outstock::after{
+  content: "Out Of Stock";
+  color: red;
+  font-size: 30px;
+}

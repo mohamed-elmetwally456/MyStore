@@ -1,0 +1,11 @@
+<style>
+  .highlight-i {
+    background-color: yellow;
+  }
+</style>
+<input
+  class="form-control mt-2"
+  placeholder="Search Product"
+  [(ngModel)]="searchText"
+/>
+<app-products [filterValue]="searchText | highlightI"></app-products>

@@ -1,0 +1,34 @@
+<div class="cont">
+  @if(!product){
+  <span>Wrong product id</span>
+  }@else {
+  <div class="products">
+    <div>
+      <img [src]="product.imgURL" />
+    </div>
+    <div class="products-col">
+      <p>{{ product.name | capitlize }}</p>
+      <p>{{ product.price | currency }}</p>
+      <p>{{ product.quantity }}</p>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
+
+  <div class="mt-4 d-flex align-items-center gap-4">
+    <button
+      [disabled]="IsFirstIndex"
+      class="btn btn-warning"
+      (click)="GoBack(product.id)"
+    >
+      Back
+    </button>
+    <button
+      [disabled]="IsLastIndex"
+      class="btn btn-info"
+      (click)="GoNext(product.id)"
+    >
+      Next
+    </button>
+  </div>
+  }
+</div>

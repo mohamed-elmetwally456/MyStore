@@ -1,0 +1,22 @@
+.cont{
+  margin-left: 600px;
+  margin-top: 150px;
+}
+.products{
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+.products img{
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: rgba(1, 204, 255, 0.2) 6px 3px 1px 0px;
+}
+.products-col{
+  margin-top: 50px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
